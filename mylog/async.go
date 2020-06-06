@@ -1,10 +1,3 @@
-/**
-* 实现标准日志库的二次开发
- * @Authr micor
- * @Date  2020-3-6
- * 将日志数据异步写入到队列当中
- *
-*/
 package mylog
 
 import (
@@ -14,8 +7,10 @@ import (
 )
 
 const (
-	//缓冲队列的长度
-	asyncBufferSize = 200
+
+	// 缓冲队列长度
+	asyncBufferSize = 100
+
 	// 开启内存池范围的写入大小
 	maxTextBytes = 1024
 )

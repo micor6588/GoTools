@@ -11,7 +11,7 @@
 package parase
 
 import (
-	"GoTools/INIFileRead/config"
+	"GoTools/ReadFile/config"
 	"bufio"
 	"errors"
 	"net/url"

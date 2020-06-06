@@ -1,7 +1,7 @@
 package main
 
 import (
-	parase "GoTools/INIFileRead/fileParase"
+	parase "GoTools/ReadFile/fileParase"
 	"fmt"
 )
 
