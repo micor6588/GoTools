@@ -6,6 +6,10 @@
   @Date  2019/12/08
   
 ```
+# 安装方法
+
+	go get  https://github.com/micor6588/GoTools.git
+	
 ## 主要支持以下几种类型转换：
  String、Int、Int64、Float64
  
@@ -69,5 +73,6 @@ root
 test
 3306
 ```
+
 
 
