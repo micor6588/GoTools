@@ -1,6 +1,8 @@
 package main
 
-import "golog"
+import (
+	"golog"
+)
 
 var log = golog.New("test2")
 
