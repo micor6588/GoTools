@@ -16,7 +16,7 @@
 
 # 安装方法
 
-	go get 
+	go get  https://github.com/micor6588/GoTools.git
 
 # 使用方法
 
