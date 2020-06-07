@@ -62,7 +62,7 @@ func (f *FileLogger) initFile() error {
 		fmt.Printf("open log file failed, err:%v\n", err)
 		return err
 	}
-	errFileObj, err := os.OpenFile(fullFileName+".err", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	errFileObj, err := os.OpenFile("ERROR_"+fullFileName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Printf("open err log file failed, err:%v\n", err)
 		return err
@@ -94,14 +94,14 @@ func (f *FileLogger) checkSize(file *os.File) bool {
 // 切割文件
 func (f *FileLogger) splitFile(file *os.File) (*os.File, error) {
 	// 需要切割日志文件
-	nowStr := time.Now().Format("20060102150405000")
+	nowStr := time.Now().Format("20060102150405")
 	fileInfo, err := file.Stat()
 	if err != nil {
 		fmt.Printf("get file info failed,err:%v\n", err)
 		return nil, err
 	}
-	logName := path.Join(f.filePath, fileInfo.Name())      // 拿到当前的日志文件完整路径
-	newLogName := fmt.Sprintf("%s.bak%s", logName, nowStr) // 拼接一个日志文件备份的名字
+	logName := path.Join(f.filePath, fileInfo.Name())           // 拿到当前的日志文件完整路径
+	newLogName := fmt.Sprintf("BackUp"+"%s%s", nowStr, logName) // 拼接一个日志文件备份的名字
 	// 1. 关闭当前的日志文件
 	file.Close()
 	// 2. 备份一下 rename  xx.log  ->  xx.log.bak201908031709
